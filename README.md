@@ -1,5 +1,6 @@
 # NHS-Waiting-Time-Analysis
-Data analysis project exploring NHS waiting time trends using Python. Includes data cleaning, transformation, and exploratory analysis to assess performance over time and identify key bottlenecks in patient care pathways.
+Analysis of NHS waiting times reveals rising patient backlogs and persistent underperformance against the 92% 18-week target, highlighting systemic capacity and efficiently challenges. 
+The dataset contains February to April information.
 
 
 ```python
@@ -17,6 +18,7 @@ df.head()
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -214,6 +216,7 @@ df.head()
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -649,8 +652,7 @@ plt.show()
 ```
 
 
-    
-![png](output_12_0.png)
+   <img width="583" height="467" alt="output_12_0" src="https://github.com/user-attachments/assets/c6a28568-5dc9-4f26-99b7-57e243514d07" />
     
 
 
@@ -666,9 +668,11 @@ plt.ylabel('Percentage')
 plt.show()
 ```
 
+<img width="597" height="467" alt="output_13_0" src="https://github.com/user-attachments/assets/1636a9ac-f005-41af-ade2-26f4231e46ce" />
 
-    
-![png](output_13_0.png)
+   
+
+
     
 
 
@@ -1113,6 +1117,23 @@ top_waiting_specialties
 
 
 ```python
+top_waiting_specialties['total_waiting'].plot(kind='barh', figsize=(10,6), color='orange')
+plt.title('10 Specialties with Highest Waiting Lists')
+plt.xlabel('Average Total Waiting')
+plt.tight_layout()
+plt.show()
+```
+
+
+    
+
+<img width="989" height="590" alt="output_20_0" src="https://github.com/user-attachments/assets/1a32e8ab-f889-4495-9c8f-cf33e2ead966" />
+
+    
+
+
+
+```python
 # -----------------------------------------------
 # Specialties with lowest performance (worst at meeting target)
 worst_specialties = df_specialty.sort_values('pct_within_18_weeks').head(10)
@@ -1197,6 +1218,22 @@ worst_specialties
 
 
 ```python
+worst_specialties['pct_within_18_weeks'].plot(kind='barh', figsize=(10,6), color='red')
+plt.title('10 Worst Performing Specialties by 18-Week Target')
+plt.xlabel('% Within 18 Weeks')
+plt.tight_layout()
+plt.show()
+```
+
+
+
+<img width="990" height="590" alt="output_22_0" src="https://github.com/user-attachments/assets/5ceccce1-a8cb-4f9b-8d5d-2da4bcd19af1" />
+
+    
+
+
+
+```python
 # ============================================
 # Insight: Specialty Pressure Analysis
 # ============================================
@@ -1261,8 +1298,9 @@ plt.show()
 
 
     
-![png](output_23_0.png)
-    
+
+<img width="577" height="453" alt="output_25_0" src="https://github.com/user-attachments/assets/606edbec-165c-425b-9bf4-c789f1b030b7" />
+
 
 
 
@@ -1330,8 +1368,8 @@ plt.show()
 ```
 
 
-    
-![png](output_26_0.png)
+  <img width="580" height="453" alt="output_28_0" src="https://github.com/user-attachments/assets/21cffc2d-3d58-41fb-925f-a7a84f5747f0" />
+
     
 
 
