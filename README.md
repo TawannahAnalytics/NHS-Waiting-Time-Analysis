@@ -1,7 +1,40 @@
-# NHS-Waiting-Time-Analysis
-Analysis of NHS waiting times reveals rising patient backlogs and persistent underperformance against the 92% 18-week target, highlighting systemic capacity and efficiently challenges. 
-The dataset contains February to April information.
+## 🚀 Key Outcome
+Identified underperformance in Oral Surgery and Trauma & Orthopaedics (30% below the 92% NHS target), supporting data-driven resource allocation decisions.
 
+---
+
+## 📊 Project Overview
+Analysed NHS waiting time data (495,000+ records) to evaluate performance against the 18-week referral-to-treatment target. The analysis highlights systemic delays, capacity issues, and variation across specialties.
+
+## 🛠 Tools Used
+- Python (Pandas, Matplotlib)
+- Data Cleaning & Transformation
+- Exploratory Data Analysis (EDA)
+- Data Visualisation
+
+- ## 📌 Key Insights
+- Oral Surgery and Trauma & Orthopaedics showed the largest performance gaps (~30% below target)
+- Persistent backlog trends indicate capacity constraints across multiple providers
+- Performance varies significantly across regions, suggesting inefficiencies in resource allocation
+
+- ## 💡 Business Impact
+- Supports targeted resource allocation in underperforming specialties
+- Helps identify bottlenecks in patient pathways
+- Enables data-driven planning to improve NHS waiting time performance
+
+- ## 🧹 Data Cleaning & Preparation
+- Removed missing and inconsistent values where applicable
+- Standardised date formats for time-based analysis
+- Selected relevant metrics: total_waiting and pct_within_18_weeks
+- Ensured data types were correctly formatted for analysis
+
+- ## 🔍 Analytical Approach
+The analysis was structured around the following key questions:
+
+1. How have NHS waiting times changed over time?
+2. Which hospitals are performing worst against targets?
+3. Which specialties are under the most pressure?
+4. Does higher demand lead to worse performance?
 
 ```python
 import pandas as pd
@@ -1327,12 +1360,17 @@ plt.show()
 
 
 ```
+## 📊 KPI Analysis: NHS 18-Week Target
 
+- Average performance consistently falls below the 92% NHS target
+- Indicates systemic underperformance across the NHS
+- Suggests persistent backlog and capacity challenges
+- 
+
+### Supporting Analysis
 
 ```python
-# ============================================
-# KPI Analysis:Is the NHS meeting its 18-Week Target (92%)
-# ============================================
+
 
 # Calculate average performance over time
 df_kpi = df.groupby('period')['pct_within_18_weeks'].mean()
